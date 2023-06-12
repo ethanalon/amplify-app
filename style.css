@@ -1,0 +1,241 @@
+*{
+--cream-color: #FAFAE9;
+--mint-color: #C4E1DC;
+--blue-color: #B2CED3;
+--pink-color: #F1C4BF;
+--beige-color: #F3E8E3;
+
+padding: 0;
+margin: 0;
+font-family: proxima-nova, sans-serif;
+font-style: normal;
+font-weight: 100;
+}
+
+
+section{
+    
+    /* border: 1px solid black; */
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 20vh;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+
+.banner{
+    /* max-width:100%;
+    max-height:100%; */
+    /* object-fit: contain; */
+    margin:0;
+    background-image: url(esang_banner.jpg);
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    opacity: 0.6;
+    /* .img{
+        object-fit: contain;
+    } */
+    height:40vh;
+    
+}
+
+.banner-bg{
+    background:white;
+    opacity:0.4;
+    padding:8em;
+}
+
+.banner .h2 {
+    font-family: 'Tangerine', serif;
+    font-size:2em;
+}
+
+.story-wrapper{
+    padding:4em;
+}
+.story{
+    padding:2em;
+    width:50%;
+    font-size: 1.3em;
+}
+.address{
+    flex-direction: column;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    height:50vh;
+    /* border: 1px solid black; */
+}
+
+.date {
+    flex-direction: column;
+    padding:5vh;
+}
+.location {
+    flex-direction: column;
+    padding:5vh;
+}
+
+div{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qa{
+    flex-direction: column;
+    padding: 5vh;
+}
+
+.colors{
+    /* background-color: black; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    border:none;
+    
+}
+
+button h3 {  
+    color:black;
+}
+
+button h3:hover {
+    color:gray;
+}
+
+
+.sq{
+    width:100px;
+    height:100px;
+}
+
+.one{
+    background-color: var(--cream-color);
+    /* float:left; */
+}
+
+.two{
+    background-color: var(--mint-color);
+    /* float:left; */
+}
+
+.three{
+    background-color: var(--blue-color);
+    /* float:left; */
+}
+
+.four{
+    background-color: var(--pink-color);
+    /* float:left; */
+}
+
+.five{
+    background-color: var(--beige-color);
+    /* float:left; */
+}
+
+
+/* ######## */
+/* WEDDING PARTY PAGE */
+
+.header-banner{
+    min-height: 5vh;
+    margin-top: 5vh;
+    font-size: 1.5em;
+}
+
+.bridesmaids-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+.bridesmaid{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10em;
+    padding-right: 10em;
+    padding-bottom: 5em;
+    padding-top: 2em;
+}
+
+.bridesmaid-img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bridesmaid-bio{
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+}
+
+.groomsmen-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+.groomsmen{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10em;
+    padding-right: 10em;
+    padding-bottom: 5em;
+    padding-top: 2em;
+}
+
+.groomsmen-img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.groomsmen-bio{
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+}
+
+.kids-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+.kids{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10em;
+    padding-right: 10em;
+    padding-bottom: 5em;
+    padding-top: 2em;
+}
+
+.kids-img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.kids-bio{
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+}
+
+
+/* ******************************* */
+/* Schedule page */
