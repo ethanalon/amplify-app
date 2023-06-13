@@ -12,6 +12,174 @@ font-style: normal;
 font-weight: 100;
 }
 
+.top{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20vh;
+}
+
+nav {
+    background-color: transparent;
+    color: #000;
+    height: 60px;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .logo a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu li {
+    margin-left: 15px;
+  }
+  
+  .menu li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: text-decoration 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    text-decoration: underline;
+  }
+  
+  .toggle {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toggle::before,
+  .toggle::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    height: 3px;
+    width: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle::before {
+    transform: translateY(-7px);
+  }
+  
+  .toggle::after {
+    transform: translateY(7px);
+  }
+  
+  .menu.active .toggle::before,
+  .menu.active .toggle::after {
+    transform: rotate(45deg);
+  }
+  
+  .menu.active .toggle::before {
+    transform-origin: top left;
+  }
+  
+  .menu.active .toggle::after {
+    transform-origin: bottom left;
+  }
+  
+  .menu.active .toggle::before,
+  .menu.active .toggle::after {
+    background-color: #fff;
+  }
+  
+  .menu.active .toggle {
+    background-color: transparent;
+  }
+  
+  .menu.active .toggle::before {
+    transform: rotate(45deg) translate(4px, 6px);
+  }
+  
+  .menu.active .toggle::after {
+    transform: rotate(-45deg) translate(4px, -6px);
+  }
+  
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .menu.active li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  
+  .menu.active li a {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      justify-content: flex-start;
+    }
+  
+    .menu {
+      display: none;
+    }
+  
+    .toggle {
+      display: flex;
+    }
+  
+    .toggle::before,
+    .toggle::after {
+      background-color: #fff;
+    }
+  
+    .menu.active {
+      display: flex;
+      flex-direction: column;
+      background-color: #000;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+    }
+  
+    .menu.active li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  
+    .menu.active li a {
+      color: #fff;
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
 
 section{
     
@@ -26,28 +194,38 @@ section{
     margin-bottom: 10%;
 }
 
-.banner{
-    /* max-width:100%;
-    max-height:100%; */
-    /* object-fit: contain; */
-    margin:0;
+
+.banner-img{
+    width:60vw;
+    height:auto;
+
+}
+/* .banner{
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+    height:40vh;
+    width:auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
     background-image: url(esang_banner.jpg);
     background-position: center;
-    background-repeat: none;
-    background-size: cover;
-    opacity: 0.6;
-    /* .img{
+    background-size: contain;
+    background-repeat: none; 
+    background-size: 100% 100%;
+    opacity: 1;
+    .img{
         object-fit: contain;
-    } */
-    height:40vh;
+    }
     
-}
+    
+} */
 
-.banner-bg{
+/* .banner-bg{
     background:white;
     opacity:0.4;
     padding:8em;
-}
+} */
 
 .banner .h2 {
     font-family: 'Tangerine', serif;
@@ -91,6 +269,7 @@ div{
 .qa{
     flex-direction: column;
     padding: 5vh;
+    width: 40%;
 }
 
 .colors{

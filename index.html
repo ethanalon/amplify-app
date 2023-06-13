@@ -19,19 +19,84 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
+        
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <script src="script.js"></script>
 
-        <a href="/wedding-party.html">Wedding Party Page</a>
-        <a href="/about-us.html">How We Met</a>
-        <a href="/schedule.html">Schedule</a>
+        <div class="top">
+            <h2 style="font-family: 'Tangerine', serif; font-size:5em;">Ethan and Sang</h2>
+            <!-- <h1>Ethan & Sang</h1> -->
+            <h4>June 1, 2024 - Berkeley, CA</h4>
+        </div>
 
-        <section class="banner">
-            <!-- <img src="esang_banner.jpg" alt=""> -->
-            <div class="banner-bg">
-                <h2 style="font-family: 'Tangerine', serif; font-size:5em;">Ethan and Sang</h2>
-            </div>
+        <!-- Countdown Clock -->
+        <script>
+            var end = new Date('06/01/2024 10:1 AM');
             
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;  
+            
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+            
+                        clearInterval(timer);
+                        document.getElementById('countdown').innerHTML = 'EXPIRED!';
+            
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    // var hours = Math.floor((distance % _day) / _hour);
+                    // var minutes = Math.floor((distance % _hour) / _minute);
+                    // var seconds = Math.floor((distance % _minute) / _second);
+            
+                    if (days>1){
+                        document.getElementById('countdown').innerHTML = days + ' days left!';
+                    }
+                    else{
+                        document.getElementById('countdown').innerHTML = days + ' day left!';
+                    }
+                    // document.getElementById('countdown').innerHTML += hours + 'hrs ';
+                    // document.getElementById('countdown').innerHTML += minutes + 'mins ';
+                    // document.getElementById('countdown').innerHTML += seconds + 'secs';
+                }
+            
+                timer = setInterval(showRemaining, 1000);
+        </script>
+
+        <div id="countdown"></div>
+        
+        <!-- NAV BAR -->
+        <nav>
+            <div class="container">
+              
+              <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="/about-us.html">Our Story</a></li>
+                <li><a href="/schedule.html">Schedule</a></li>
+                <li><a href="/photos.html">Photos</a></li>
+                <li><a href="/wedding-party.html">Wedding Party</a></li>
+                <li><a href="/registry.html">Registry</a></li>
+                <li><a href="/rsvp.html">RSVF</a></li>
+              </ul>
+              <div class="toggle"></div>
+            </div>
+        </nav>
+
+        <!-- IMAGE BANNER -->
+        <section class="banner">
+            <img class="banner-img" src="esang_banner.jpg" alt="">
         </section>
+
+        
+
+        
         
         <section class="about">
             
@@ -40,10 +105,7 @@
                 <h4>DoubleTree Berkeley Marina</h4>
                 <p>200 Marina Blvd, Berkeley, CA 94710</p>
             </div>
-            <div class="date">
-                <h2>Date</h2>
-                <h4>June 1, 2023</h4>
-            </div>
+            
         </section>
 
         
@@ -83,7 +145,17 @@
                     ahead of time.
                 </p>
             </div>
-            <div class="qa kids">
+            
+            <div class="qa dress_code">
+                <h3>WHAT IS THE DRESS CODE?</h3>
+                <p>We are requesting a semi-formal dress code for our wedding.
+                    Don't show up fancier than Ethan will. It might be hard.
+                    It is also the beginning of summertime, so no need to stack 
+                    on so many layers!
+                </p>
+            </div>
+            
+            <div class="qa kids-invited">
                 <h3>ARE KIDS INVITED?</h3>
                 <p>Due to limited numbers, we hope you only bring children
                     that are listed in your invitation. If your invitation 
@@ -94,15 +166,7 @@
                     significant other have been invited.
                 </p>
             </div>
-            <div class="qa dress_code">
-                <h3>WHAT IS THE DRESS CODE?</h3>
-                <p>We are requesting a semi-formal dress code for our wedding.
-                    Don't show up fancier than Ethan will. It might be hard.
-                    It is also the beginning of summertime, so no need to stack 
-                    on so many layers!
-                </p>
-            </div>
-
+            
         </section>
 
 
