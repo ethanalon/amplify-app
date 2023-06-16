@@ -10,6 +10,8 @@ margin: 0;
 font-family: proxima-nova, sans-serif;
 font-style: normal;
 font-weight: 100;
+
+scroll-behavior: smooth;
 }
 
 .top{
@@ -59,6 +61,8 @@ nav {
   
   .menu li a:hover {
     text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--blue-color);
   }
   
   .toggle {
@@ -325,6 +329,21 @@ button h3:hover {
 }
 
 
+/* ############################## */
+/* SOCIALS / FOOTER */
+
+.socials{
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.social-icon {
+  width:50px;
+  height:50px;
+  padding: 25px;
+}
+
+
 /* ######## */
 /* WEDDING PARTY PAGE */
 
@@ -412,9 +431,24 @@ button h3:hover {
 .kids-bio{
     display: flex;
     flex-direction: column;
-    padding: 3em;
-}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
 
 /* ******************************* */
 /* Schedule page */
+
+
+
+
+/* ******************************* */
+/* RSVP Page */
+
+.rsvp{
+  flex-direction: column;
+  height:100vh;
+}
+
+#jump{
+  flex-direction: column;
+  height:100vh;
+}
