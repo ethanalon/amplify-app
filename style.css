@@ -443,6 +443,16 @@ button h3:hover {
 /* ******************************* */
 /* RSVP Page */
 
+.rsvp-title{
+  font-family: 'Tangerine';
+  font-size: 5em;
+}
+
+.rsvp-wrapper{
+  /* background-color: var(--cream-color); */
+  background-color: #FAFAE9;
+}
+
 .rsvp{
   flex-direction: column;
   height:100vh;
@@ -451,4 +461,63 @@ button h3:hover {
 #jump{
   flex-direction: column;
   height:100vh;
+}
+
+label{
+  font-size: 2em;
+}
+form{
+  display:flex;
+  flex-direction: column;
+}
+input{
+  border:0;
+  outline:0;
+  background:transparent;
+  border-bottom: 1px solid black;
+  font-size: 2em;
+}
+
+.next-button{
+    width: 5vw;
+    height: 20px;
+    margin: 50px;
+    margin-top: 20px;
+    padding: 2vw;
+    background: var(--mint-color);
+}
+.back-button{
+    width: 5vw;
+    height: 20px;
+    margin: 50px;
+    margin-top: 20px;
+    padding: 2vw;
+    background: var(--pink-color);
+}
+
+.next-button a, .back-button a{
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background-color: transparent;
+}
+
+.next-button a:visited, .back-button a:visited{
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background-color: transparent;
+}
+
+.next-button:hover, .back-button:hover{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--blue-color);
+  background-color: transparent;
+}
+
+
+
+.guest-policy{
+  flex-direction: row;
 }

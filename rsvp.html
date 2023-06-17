@@ -8,11 +8,10 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
     <section class="rsvp-wrapper">
     <div class="rsvp" id="start">
-        <h1>RSVP</h1>
-        <h4>Start Here</h4>
+        <h1 class="rsvp-title">RSVP</h1>
+        <h1>Start Here</h1>
         <div class="buttons">
             <div class="next-button">
                 <a href="#name">Next</a>
@@ -20,10 +19,8 @@
         </div>
     </div>
     <div class="rsvp" id="name">
-        <h2>Your Name</h2>
-        <h4>What is your name?</h4>
         <form action="#">
-            <label for="name">Your Name:</label>
+            <label for="name">What is Your Name?</label>
             <input type="text" placeholder="Your Name" name="name" id="name" required>
         </form>
         
@@ -38,9 +35,11 @@
     </div>
 
     <div class="rsvp" id="code">
-        <h2>Your Name</h2>
-        <h4>What is your name?</h4>
-        
+        <h2>Enter Your Invite Code</h2>
+        <form action="#">
+            <label for="name">Your Name:</label>
+            <input type="number" placeholder="Your Name" name="name" id="name" required>
+        </form>
         <div class="buttons">
             <div class="back-button">
                 <a href="#name">Back</a>
@@ -52,8 +51,10 @@
     </div>
 
     <div class="rsvp" id="attending">
-        <h2>Your Name</h2>
-        <h4>What is your name?</h4>
+        <h2>Who will be attending?</h2>
+        <form action="#">
+            <input type="text" placeholder="Your Name" name="name" id="name" required>
+        </form>
         
         <div class="buttons">
             <div class="back-button">
@@ -66,9 +67,35 @@
     </div>
     
     <div class="rsvp" id="plus-one">
-        <h2>Your Name</h2>
-        <h4>What is your name?</h4>
-        
+        <h2>Guests and Plus Ones</h2>
+        <div class="guest-policy">
+            <div class="qa guests">
+                <h3>CAN I BRING A GUEST?</h3>
+                <p>We unfortunately cannot accomodate additional guests. 
+                    Since our capacity is limited, we can only accomodate 
+                    guests named on your invitation. Your invitation will be 
+                    addressed to "[Your Name] & Guest" if a plus-one applies 
+                    to you. If you need to replace your guest, please let us know 
+                    ahead of time.
+                </p>
+            </div>
+            <div class="qa kids-invited">
+                <h3>ARE KIDS INVITED?</h3>
+                <p>Due to limited numbers, we hope you only bring children
+                    that are listed in your invitation. If your invitation 
+                    addressed to "The [Your Last Name] Family", then it is 
+                    implied that your children and significant other have
+                    also been invited. On the other hand, if your invitation 
+                    is for "Mr. and Mrs. [Last Name]" then only you and your 
+                    significant other have been invited.
+                </p>
+            </div>
+        </div>
+        <form class="guest-policy" action="#">
+            <input type="checkbox" placeholder="Your Name" name="name" id="name" required>
+            <label for="name">I acknowledge this guest policy.</label>
+        </form>
+
         <div class="buttons">
             <div class="back-button">
                 <a href="#attending">Back</a>
@@ -80,8 +107,29 @@
     </div>
     
     <div class="rsvp" id="diet">
-        <h2>Your Name</h2>
-        <h4>What is your name?</h4>
+        <h2>Diet</h2>
+        <h4>Do you have any dietary restrictions?</h4>
+
+        <form action="#">
+            <div class="diet-option">
+                <label for="vegetarian"> Vegetarian:</label>
+                <input type="checkbox" name="diet" id="vegetarian">
+            </div>
+            <div class="diet-option">
+                <label for="vegetarian"> Vegan:</label>
+                <input type="checkbox" name="diet" id="vegan">
+            </div>
+            <div class="diet-option">
+                <label for="vegetarian"> Gluten-Free:</label>
+                <input type="checkbox" name="diet" id="gluten-free">
+            </div>
+            <div class="diet-option">
+                <label for="vegetarian"> Other:</label>
+                <input type="checkbox" name="diet" id="other">
+            </div>
+
+            
+        </form>
         
         <div class="buttons">
             <div class="back-button">
