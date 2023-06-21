@@ -8,6 +8,42 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <script src="script.js"></script>
+    <section class="rsvp-wrapper">
+    <div id="content"></div>
+    <form id="questionForm" class="questionForm">
+        <div class="question active">
+            <div class="input-holder">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            
+            <div class="button-holder">
+                <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button>
+            </div>
+            
+        </div>
+        <!-- <div class="question ">
+            <label for="email">Phone:</label>
+            <input type="tel" name="phone" id="phone" required>
+            <button type="button" id="prevButton" class="prev" onclick="showPreviousQuestion()">Previous</button>
+            <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button>
+        </div> -->
+        <div class="question last">
+            <div class="input-holder">
+                <label for="email">Email:</label>
+                <input type="tel" name="email" id="email" required>
+            </div>
+            <div class="button-holder">
+                <button type="button" id="prevButton" class="back" onclick="showPreviousQuestion()">Previous</button>
+                <button type="submit" class="sub">Submit</button>
+            </div>
+            
+        </div>
+    </form>
+    <!-- <div class="rsvp" id="start">
+        <h1>RSVP</h1>
+        <h4>Start Here</h4>
     <section class="rsvp-wrapper">
     <div class="rsvp" id="start">
         <h1 class="rsvp-title">RSVP</h1>
@@ -142,8 +178,22 @@
     </div>
     
     <div class="rsvp" id="contact">
-        <h2>Your Name</h2>
-        <h4>What is your name?</h4>
+        <h2>Contact Info</h2>
+        <h4>What is your email?</h4>
+        
+        <div class="buttons">
+            <div class="back-button">
+                <a href="#diet">Back</a>
+            </div>
+            <div class="next-button">
+                <a href="#thanks">Next</a>
+            </div>
+        </div> 
+    </div>
+
+    <div class="rsvp" id="contact">
+        <h2>Contact Info</h2>
+        <h4>What is your phone number?</h4>
         
         <div class="buttons">
             <div class="back-button">
@@ -179,7 +229,16 @@
         <p>create separate portals for each family</p>
         <p>let people change their rsvp</p>
     </div>
-    
+     -->
+     <div id="confirmationPage" class="confirmationPage">
+        <h2>Thank you for submitting the form!</h2>
+        <p>Your information has been successfully recorded.</p>
+      </div>
+  
+      <div id="errorPage" class="errorPage">
+        <h2>Oops! An error occurred.</h2>
+        <p>Sorry, there was an error while submitting the form. Please try again later.</p>
+      </div>
     </section>
 
     <a href="/">Back to Home Page</a>

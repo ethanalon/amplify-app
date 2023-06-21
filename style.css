@@ -451,11 +451,31 @@ button h3:hover {
 .rsvp-wrapper{
   /* background-color: var(--cream-color); */
   background-color: #FAFAE9;
+  flex-direction: column;
 }
 
-.rsvp{
+#questionForm{
   flex-direction: column;
   height:100vh;
+}
+
+
+.question{
+  height:100vh;
+  min-height: 500px;
+  flex-direction: column;
+}
+
+.input-holder{
+  flex-direction: row;
+}
+.button-holder{
+  flex-direction: row;
+}
+
+.confirmationSection, .errorSection{
+  /* display: none; */
+  visibility: hidden;
 }
 
 #jump{
@@ -478,44 +498,46 @@ input{
   font-size: 2em;
 }
 
-.next-button{
-    width: 5vw;
-    height: 20px;
+.next, .sub{
+    width: 200px;
+    height: 50px;
     margin: 50px;
     margin-top: 20px;
     padding: 2vw;
     background: var(--mint-color);
+    
 }
-.back-button{
-    width: 5vw;
-    height: 20px;
+.back{
+    width: 200px;
+    height: 50px;
     margin: 50px;
     margin-top: 20px;
     padding: 2vw;
     background: var(--pink-color);
+    
 }
 
-.next-button a, .back-button a{
+.next a, .back a, .sub a{
   text-decoration: none;
   font-weight: bold;
   color: black;
   background-color: transparent;
 }
 
-.next-button a:visited, .back-button a:visited{
+.next a:visited, .back a:visited, .sub a:visited{
   text-decoration: none;
   font-weight: bold;
   color: black;
   background-color: transparent;
 }
 
-.next-button:hover, .back-button:hover{
+.next:hover, .back:hover, .sub:hover{
   text-decoration: none;
   font-weight: bold;
   color: var(--blue-color);
   background-color: transparent;
+  cursor: pointer;
 }
-
 
 
 .guest-policy{
