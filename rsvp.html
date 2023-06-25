@@ -10,16 +10,36 @@
 <body>
     <script src="script.js"></script>
     <section class="rsvp-wrapper">
-    <div id="content"></div>
-    <form id="questionForm" class="questionForm">
-        <div class="question active">
+    <!-- <div id="content"></div> -->
+    <form id="questionForm" class="questionForm" 
+            method="POST" 
+            action="https://script.google.com/macros/s/AKfycbzny01XX6YCio-4kqEIdIPhEGkOc12C_jlWNb7M6cksXbl2DQ_xIE-9LyjR7fHaQ_1V/exec">
+        
+        <div class="anchor-name question">
+            
             <div class="input-holder">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" required>
             </div>
             
             <div class="button-holder">
-                <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button>
+                <!-- <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button> -->
+                <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-phone').scrollIntoView();">Next</div>
+            </div>
+            
+        </div>
+
+        <div class="anchor-phone question">
+            
+            <div class="input-holder">
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="phone" required>
+            </div>
+            
+            <div class="button-holder">
+                <!-- <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button> -->
+                <div class="backButton" id="backButton" onclick="document.querySelector('.anchor-name').scrollIntoView();">Back</div>
+                <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-email').scrollIntoView();">Next</div>
             </div>
             
         </div>
@@ -29,14 +49,15 @@
             <button type="button" id="prevButton" class="prev" onclick="showPreviousQuestion()">Previous</button>
             <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button>
         </div> -->
-        <div class="question last">
+        <div class="anchor-email question">
             <div class="input-holder">
                 <label for="email">Email:</label>
-                <input type="tel" name="email" id="email" required>
+                <input type="email" name="email" id="email" required>
             </div>
             <div class="button-holder">
-                <button type="button" id="prevButton" class="back" onclick="showPreviousQuestion()">Previous</button>
-                <button type="submit" class="sub">Submit</button>
+                <!-- <button type="button" id="prevButton" class="back" onclick="showPreviousQuestion()">Previous</button> -->
+                <div class="backButton" id="backButton" onclick="document.querySelector('.anchor-phone').scrollIntoView();">Back</div>
+                <button type="submit" class="subButton">Submit</button>
             </div>
             
         </div>
@@ -230,16 +251,16 @@
         <p>let people change their rsvp</p>
     </div>
      -->
-     <div id="confirmationPage" class="confirmationPage">
-        <h2>Thank you for submitting the form!</h2>
-        <p>Your information has been successfully recorded.</p>
-      </div>
-  
-      <div id="errorPage" class="errorPage">
+     <!-- <div id="confirmation-message" class="confirmation-message"> -->
+        <!-- <h2>Thank you for submitting the form!</h2>
+        <p>Your information has been successfully recorded.</p> -->
+      <!-- </div>
+   -->
+      <!-- <div id="errorPage" class="errorPage">
         <h2>Oops! An error occurred.</h2>
         <p>Sorry, there was an error while submitting the form. Please try again later.</p>
       </div>
-    </section>
+    </section> -->
 
     <a href="/">Back to Home Page</a>
 </body>

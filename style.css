@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Ysabeau+Infant&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 *{
 --cream-color: #FAFAE9;
 --mint-color: #C4E1DC;
@@ -7,12 +10,14 @@
 
 padding: 0;
 margin: 0;
-font-family: proxima-nova, sans-serif;
+/* font-family: proxima-nova, sans-serif; */
+font-family: 'Ysabeau Infant', sans-serif;
 font-style: normal;
 font-weight: 100;
 
 scroll-behavior: smooth;
 }
+
 
 .top{
     display: flex;
@@ -192,10 +197,11 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: scroll; */
     min-height: 20vh;
     flex-direction: column;
     margin-bottom: 10%;
+    
 }
 
 
@@ -450,7 +456,7 @@ button h3:hover {
 
 .rsvp-wrapper{
   /* background-color: var(--cream-color); */
-  background-color: #FAFAE9;
+  background-color: white;
   flex-direction: column;
 }
 
@@ -461,9 +467,14 @@ button h3:hover {
 
 
 .question{
+  display: flex;
   height:100vh;
+  width: 80vw;  
   min-height: 500px;
   flex-direction: column;
+  background-color: var(--cream-color);
+
+  /* border: 2px solid blue; */
 }
 
 .input-holder{
@@ -473,23 +484,25 @@ button h3:hover {
   flex-direction: row;
 }
 
-.confirmationSection, .errorSection{
-  /* display: none; */
+/* .confirmationSection, .errorSection{
+  display: none;
   visibility: hidden;
-}
+} */
 
-#jump{
+/* #jump{
   flex-direction: column;
   height:100vh;
-}
+} */
 
 label{
   font-size: 2em;
 }
+
 form{
   display:flex;
   flex-direction: column;
 }
+
 input{
   border:0;
   outline:0;
@@ -498,43 +511,41 @@ input{
   font-size: 2em;
 }
 
-.next, .sub{
+.nextButton, .subButton, .backButton{
     width: 200px;
     height: 50px;
-    margin: 50px;
-    margin-top: 20px;
-    padding: 2vw;
+    margin: 25px;
+    /* margin-top: 20px; */
+    /* padding: 25px; */
     background: var(--mint-color);
+    align-items: center;
+    vertical-align: middle;
     
 }
-.back{
-    width: 200px;
-    height: 50px;
-    margin: 50px;
-    margin-top: 20px;
-    padding: 2vw;
+
+.backButton{
     background: var(--pink-color);
-    
 }
 
-.next a, .back a, .sub a{
+.nextButton a, .backButton a, .subButton a{
   text-decoration: none;
   font-weight: bold;
   color: black;
   background-color: transparent;
 }
 
-.next a:visited, .back a:visited, .sub a:visited{
+.nextButton a:visited, .backButton a:visited, .subButton a:visited{
   text-decoration: none;
   font-weight: bold;
   color: black;
   background-color: transparent;
 }
 
-.next:hover, .back:hover, .sub:hover{
+.nextButton:hover, .backButton:hover, .subButton:hover{
   text-decoration: none;
   font-weight: bold;
-  color: var(--blue-color);
+  /* color: var(--blue-color); */
+  color: black;
   background-color: transparent;
   cursor: pointer;
 }
