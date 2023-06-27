@@ -22,8 +22,17 @@ function getParameterByName(name, url) {
 // Function to display the personalized message
 function displayMessage() {
   var name = getParameterByName('name');
+  var phone = getParameterByName('phone');
+  var email = getParameterByName('email');
 
   var messageElement = document.getElementById('message');
-  var message = 'Thank you, ' + name + ', for your RSVP!';
+  var message = 'Thank you, ' + name + ', for your RSVP!' + '\n'
+                + 'Phone: ' + phone + '\n'
+                + 'Email: ' + email + '\n' ;
   messageElement.textContent = message;
+
+  
+
+
+
 }
