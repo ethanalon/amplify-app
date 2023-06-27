@@ -26,9 +26,10 @@ function displayMessage() {
   var email = getParameterByName('email');
 
   var messageElement = document.getElementById('message');
+  messageElement.setAttribute('style', 'white-space: pre;');
   var message = 'Thank you, ' + name + ', for your RSVP!' + '\n'
-                + 'Phone: ' + phone + '<br>'
-                + 'Email: ' + email + '<br>' ;
+                + 'Phone: ' + phone + '\r\n'
+                + 'Email: ' + email + '\r\n' ;
   messageElement.textContent = message;
 
   
