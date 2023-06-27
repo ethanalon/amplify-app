@@ -27,8 +27,8 @@ function displayMessage() {
 
   var messageElement = document.getElementById('message');
   var message = 'Thank you, ' + name + ', for your RSVP!' + '\n'
-                + 'Phone: ' + phone + '\n'
-                + 'Email: ' + email + '\n' ;
+                + 'Phone: ' + phone + '<br>'
+                + 'Email: ' + email + '<br>' ;
   messageElement.textContent = message;
 
   
