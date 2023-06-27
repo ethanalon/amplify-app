@@ -101,6 +101,33 @@ function addEventListeners() {
   // form.addEventListener('submit', submitForm);
 }
 
+
+function validatePhone() {
+  const phoneInput = document.getElementById('phone');
+  // const phoneNumber = phoneInput.value.replace(/\D/g, ''); // Remove non-digit characters
+  const phoneNumber = phoneInput.value.replace(/\s/g, ''); // Remove white spaces
+
+  
+  const phonePattern = /^(\d{10}|\(\d{3}\)\s?\d{3}\s?-?\d{4}|\d{3}-\d{3}-\d{4})$/;
+    
+    if (!phonePattern.test(phoneNumber)) {
+      alert('Please enter a valid phone number in the formats 1234567890, (123) 456-7890, or 123-456-7890.');
+      phoneInput.value = ''; // Clear the input
+      phoneInput.focus(); // Set focus back to the phone input
+      return false;
+    }
+
+  // if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+  //   alert('Please enter a valid 10-digit phone number.');
+  //   phoneInput.value = ''; // Clear the input
+  //   phoneInput.focus(); // Set focus back to the phone input
+  //   return false;
+  // }
+  
+  // Phone number is valid, proceed to the next question or form submission
+  document.querySelector('.anchor-email').scrollIntoView();
+}
+
 // Function to handle Enter key press
 // function handleEnterKeyPress(event) {
 //   if (event.key === 'Enter') {

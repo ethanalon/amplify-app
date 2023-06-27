@@ -13,7 +13,7 @@
     <!-- <div id="content"></div> -->
     <form id="questionForm" class="questionForm" 
             method="POST" 
-            action="https://script.google.com/macros/s/AKfycbzny01XX6YCio-4kqEIdIPhEGkOc12C_jlWNb7M6cksXbl2DQ_xIE-9LyjR7fHaQ_1V/exec">
+            action="https://script.google.com/macros/s/AKfycbyqQo3wmZalup3BQ6FIUSuAFmRJVBGqHXxOxNJP46fE8Bhxw_yn8WFLKNbMjJq-W6Wl/exec">
         
         <div class="anchor-name question">
             
@@ -33,13 +33,15 @@
             
             <div class="input-holder">
                 <label for="phone">Phone:</label>
-                <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" name="phone" id="phone" required>
+                <!-- <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" name="phone" id="phone" required> -->
+                <input type="tel" name="phone" id="phone" placeholder="Format: 123-456-7890" required>
             </div>
             
             <div class="button-holder">
                 <!-- <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button> -->
                 <div class="backButton" id="backButton" onclick="document.querySelector('.anchor-name').scrollIntoView();">Back</div>
-                <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-email').scrollIntoView();">Next</div>
+                <!-- <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-email').scrollIntoView();">Next</div> -->
+                <div class="nextButton" id="nextButton" onclick="validatePhone();">Next</div>
             </div>
             
         </div>

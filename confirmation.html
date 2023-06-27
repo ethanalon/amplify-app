@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Confirmation</title>
+  <script src="confirmation.js"></script> 
 </head>
-<body>
+<!-- <body>
   <h1>Thank you for your submission!</h1>
   <div id="confirmation-message"></div>
 
@@ -13,5 +14,13 @@
 
   <a href="/">Back to Home Page</a>
 
+</body> -->
+
+<body onload="displayMessage()">
+  <h1>Confirmation Page</h1>
+  <p id="message"></p>
+  <p>Phone: <span id="phone"></span></p>
+  <p>Email: <span id="email"></span></p>
+  <a href="/">Back to Home Page</a>
 </body>
 </html>
