@@ -8,9 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-
+    return render_template('invite.html')
 @app.route('/invite', methods=['GET', 'POST'])
 def invite():
     if request.method == 'POST':
