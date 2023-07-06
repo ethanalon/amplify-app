@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSVP</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+<!--    <link href="style.css" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
+
 <body>
-    <script src="script.js"></script>
+<!--    <script src="script.js"></script>-->
+    <script src="../static/script.js"></script>
     <section class="rsvp-wrapper">
     <!-- <div id="content"></div> -->
     <form id="questionForm" class="questionForm"
@@ -44,13 +47,13 @@
 
         <div class="anchor-attending question">
             <h2>Who will be attending?</h2>
-            <div class="input-holder">
-                <div class="guest-option">
+            <div class="guest-option">
                 {% for guest in guests %}
+                <div class="input-holder">
                     <input type="checkbox" id="guests" name="guests[]" value="{{ guest }}">
                     <label>{{ guest }}</label>
-                {% endfor %}
                 </div>
+                {% endfor %}
             </div>
 
             <div class="button-holder">
@@ -64,68 +67,65 @@
 
         <div class="anchor-policy question">
             <h2>Guests and Plus Ones</h2>
-        <div class="guest-policy">
-            <div class="qa guests">
-                <h3>CAN I BRING A GUEST?</h3>
-                <p>We unfortunately cannot accomodate additional guests.
-                    Since our capacity is limited, we can only accomodate
-                    guests named on your invitation. Your invitation will be
-                    addressed to "[Your Name] & Guest" if a plus-one applies
-                    to you. If you need to replace your guest, please let us know
-                    ahead of time.
-                </p>
+            <div class="guest-policy">
+                <div class="qa guests">
+                    <h3>CAN I BRING A GUEST?</h3>
+                    <p>We unfortunately cannot accomodate additional guests.
+                        Since our capacity is limited, we can only accomodate
+                        guests named on your invitation. Your invitation will be
+                        addressed to "[Your Name] & Guest" if a plus-one applies
+                        to you. If you need to replace your guest, please let us know
+                        ahead of time.
+                    </p>
+                </div>
+                <div class="qa kids-invited">
+                    <h3>ARE KIDS INVITED?</h3>
+                    <p>Due to limited numbers, we hope you only bring children
+                        that are listed in your invitation. If your invitation
+                        addressed to "The [Your Last Name] Family", then it is
+                        implied that your children and significant other have
+                        also been invited. On the other hand, if your invitation
+                        is for "Mr. and Mrs. [Last Name]" then only you and your
+                        significant other have been invited.
+                    </p>
+                </div>
             </div>
-            <div class="qa kids-invited">
-                <h3>ARE KIDS INVITED?</h3>
-                <p>Due to limited numbers, we hope you only bring children
-                    that are listed in your invitation. If your invitation
-                    addressed to "The [Your Last Name] Family", then it is
-                    implied that your children and significant other have
-                    also been invited. On the other hand, if your invitation
-                    is for "Mr. and Mrs. [Last Name]" then only you and your
-                    significant other have been invited.
-                </p>
-            </div>
-        </div>
             <div class="input-holder">
                 <input type="checkbox" name="policy" id="policy" required>
                 <label for="policy">I acknowledge this guest policy.</label>
             </div>
 
             <div class="button-holder">
-                <!-- <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button> -->
                 <div class="backButton" id="backButton" onclick="document.querySelector('.anchor-attending').scrollIntoView();">Back</div>
-                <!-- <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-email').scrollIntoView();">Next</div> -->
-<!--                <div class="nextButton" id="nextButton" onclick="validatePhone();">Next</div>-->
                 <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-diet').scrollIntoView();">Next</div>
 
             </div>
 
         </div>
-        <!-- <div class="question ">
-            <label for="email">Phone:</label>
-            <input type="tel" name="phone" id="phone" required>
-            <button type="button" id="prevButton" class="prev" onclick="showPreviousQuestion()">Previous</button>
-            <button type="button" id="nextButton" class="next" onclick="showNextQuestion()">Next</button>
-        </div> -->
+
         <div class="anchor-diet question">
-            <h2>Diet Restrictions</h2>
-            <div class="input-holder">
+            <h2>Meal Selection</h2>
+            <p>All meals are served with Chef's Choice of Starch, Seasonal Vegetables, Rolls, and Butter</p>
+            <div class="diet-options">
+                {% for guest in guests %}
+                    <label>Select a meal for {{ guest }}</label>
                 <div class="diet-option">
-                <label for="vegetarian"> Vegetarian:</label>
-                <input type="checkbox" name="diet" id="vegetarian">
-            </div>
-            <div class="diet-option">
-                <label for="vegetarian"> Vegan:</label>
-                <input type="checkbox" name="diet" id="vegan">
-            </div>
-            <div class="diet-option">
-                <label for="vegetarian"> Gluten-Free:</label>
-                <input type="checkbox" name="diet" id="gluten-free">
-            </div>
-            <div class="diet-option">
-                <label for="vegetarian"> Other:</label>
-                <input type="checkbox" name="diet" id="other">
+
+                    <div class="input-holder">
+                        <label for="steak"> Grilled NY Strip Steak w/ Whiskey Demi-Glaze</label>
+                        <input type="radio" name="meal_{{ guest }}" id="steak" checked>
+                    </div>
+                    <div class="input-holder">
+                        <label for="salmon"> Oven Roasted Atlantic Salmon w/ Tomato Vinaigrette</label>
+                        <input type="radio" name="meal_{{ guest }}" id="salmon">
+                    </div>
+                    <div class="input-holder">
+                        <label for="none"> Not Attending </label>
+                        <input type="radio" name="meal_{{ guest }}" id="none">
+                    </div>
+
+                </div>
+                {% endfor %}
             </div>
             <div class="button-holder">
                 <!-- <button type="button" id="prevButton" class="back" onclick="showPreviousQuestion()">Previous</button> -->
@@ -183,10 +183,6 @@
     <div id="jump">
         <p>dear future ethan, here are some cool things to add</p>
         <p>send email confirmation</p>
-        <p>connect responses to google drive</p>
-        <p>add invite codes so that people rsvp for themselves</p>
-        <p>create separate portals for each family</p>
-        <p>let people change their rsvp</p>
     </div>
 
     </section>

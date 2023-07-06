@@ -24,12 +24,16 @@ function displayMessage() {
   var name = getParameterByName('name');
   var phone = getParameterByName('phone');
   var email = getParameterByName('email');
+  var guests = getParameterByName('guests[]');
+  var diet = getParameterByName('diet');
 
   var messageElement = document.getElementById('message');
   messageElement.setAttribute('style', 'white-space: pre;');
   var message = 'Thank you, ' + name + ', for your RSVP!' + '\n'
                 + 'Phone: ' + phone + '\r\n'
-                + 'Email: ' + email + '\r\n' ;
+                + 'Email: ' + email + '\r\n'
+                + 'Guests: ' + guests + '\r\n'
+                + 'Diet: ' + diet + '\r\n';
   messageElement.textContent = message;
 
   
