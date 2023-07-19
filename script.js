@@ -144,6 +144,45 @@ function validatePhone() {
 //   }
 // }
 
+
+function updateMealOptions() {
+  const guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.value);
+  const mealOptionsContainer = document.getElementById('mealOptions');
+  mealOptionsContainer.innerHTML = '';
+
+  guests.forEach(guest => {
+    const mealOptionDiv = document.createElement('div');
+    mealOptionDiv.classList.add('diet-option');
+    mealOptionDiv.innerHTML = `
+      <label>Select a meal for ${guest}</label>
+      <div class="input-holder">
+        <label for="steak-${guest}">Grilled NY Strip Steak w/ Whiskey Demi-Glaze</label>
+        <input type="radio" name="meal_${guest}" id="steak-${guest}" value="steak" checked>
+      </div>
+      <div class="input-holder">
+        <label for="salmon-${guest}">Oven Roasted Atlantic Salmon w/ Tomato Vinaigrette</label>
+        <input type="radio" name="meal_${guest}" id="salmon-${guest}" value="salmon">
+      </div>
+      <div class="input-holder">
+        <label for="none-${guest}">Not Attending</label>
+        <input type="radio" name="meal_${guest}" id="none-${guest}" value="none">
+      </div>
+    `;
+    mealOptionsContainer.appendChild(mealOptionDiv);
+  });
+}
+
+// Add event listener to guest checkboxes
+const guestCheckboxes = document.querySelectorAll('input[name="guests[]"]');
+guestCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', updateMealOptions);
+});
+
+// Call the function initially to populate the meal options based on the initial state of checkboxes
+updateMealOptions();
+
+
+
 // // Initialize the script
 // document.addEventListener('keydown', handleEnterKeyPress);
 addEventListeners();

@@ -567,3 +567,7 @@ input{
 .guest-option{
   flex-direction: column;
 }
+
+.big-title{
+  font-size:2em;
+}
