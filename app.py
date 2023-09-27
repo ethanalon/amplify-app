@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -8,31 +8,43 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('invite.html')
+    return render_template('/invite.html')
 
 @app.route('/invite', methods=['GET', 'POST'])
 def invite():
     if request.method == 'POST':
         invite_code = request.form.get('invite_code')
+        family_name = request.form.get('family_name')
 
         # Check if the invite code is valid in the database
         conn = sqlite3.connect('database.db')
         cur = conn.cursor()
-        cur.execute("SELECT invite_code FROM rsvp WHERE invite_code=?", (invite_code,))
+        # Use proper parameterization to prevent SQL injection
+        cur.execute("SELECT invite_code, family_name FROM users WHERE invite_code=?", (invite_code,))
         result = cur.fetchone()
         cur.close()
         conn.close()
 
         if result:
-            return redirect(f'/rsvp/{invite_code}')  # Redirect to the RSVP page with the invite code
+            print(f"Found an invitation for invite code: {invite_code}", flush=True)
+            # Return a JSON response indicating success
+            return jsonify({'success': True, 'redirect_url': f'/rsvp/{family_name}/{invite_code}'})
+
         else:
-            return render_template('invite.html', error=True)
+            print(f"Did not find an invitation for invite code: {invite_code}", flush=True)
+            # Return a JSON response indicating failure
+            return jsonify({'success': False, 'error': 'Invalid invite code'})
 
-    return render_template('invite.html', error=False)
+    return render_template('invite.html')
 
 
-@app.route('/rsvp/<invite_code>', methods=['GET', 'POST'])
-def rsvp(invite_code):
+@app.route('/rsvp', methods=['GET', 'POST'])
+def no_code():
+    return redirect('/invite')
+    # return redirect(f'/invite.html/')
+
+@app.route('/rsvp/<family_name>/<invite_code>', methods=['GET', 'POST'])
+def rsvp(family_name, invite_code):
     # Fetch the list of guests from the database based on the invite code
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
@@ -54,7 +66,7 @@ def rsvp(invite_code):
 
         return redirect('/thanks')  # Redirect to the thank you page
 
-    return render_template('rsvp.html', guests=guests)
+    return render_template('/rsvp.html', guests=guests)
 
 
 @app.route('/thanks')

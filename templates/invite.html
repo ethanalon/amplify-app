@@ -4,15 +4,48 @@
 <html>
 <head>
     <title>Questionnaire</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Questionnaire</h1>
-    <form action="/rsvp" method="post">
-        <label for="family_name">Enter your family code:</label><br>
+
+    <script src="/static/invite.js"></script>
+
+    <div class="header-banner">
+        <img src="/static/head-bg.webp" alt="bg">
+    </div>
+
+    <div class="top">
+        <h2>Ethan and Sang</h2>
+        <h4>June 1, 2025 - El Cerrito, CA</h4>
+    </div>
+    
+    <!-- NAV BAR -->
+    <nav>
+        <div class="container">
+          
+          <ul class="menu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">Our Story</a></li>
+            <li><a href="/schedule.html">Schedule</a></li>
+            <li><a href="/photos.html">Photos</a></li>
+            <li><a href="/wedding-party.html">Wedding Party</a></li>
+            <li><a href="/registry.html">Registry</a></li>
+            <li><a href="/templates/invite.html">RSVP</a></li>
+          </ul>
+          <div class="toggle"></div>
+        </div>
+    </nav>
+
+    <h1>Ethan & Sang's Wedding RSVP</h1>
+
+    <form id="rsvpForm" action="/rsvp" method="post">
+        <label for="family_name">Enter your family name:</label><br>
         <input type="text" id="family_name" name="family_name" required><br><br>
         <label for="invite_code">Enter your invite code:</label><br>
         <input type="text" id="invite_code" name="invite_code" required><br><br>
-        <input type="submit" value="Next">
+        <input type="submit" value="Find Your Invitation!">
     </form>
+    
+    <a href="/">Back to Home Page</a>
 </body>
 </html>

@@ -1,5 +1,11 @@
 function updateMealOptions() {
+  console.log("updateMealOptions called");
   const guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.getAttribute('value'));
+  // console.log(guests)
+  // guests.forEach(guest =>{
+  //   console.log(guest, document.querySelector(`input[name="meal_${guest}"]:checked`))
+  // });
+
   const mealOptionsContainer = document.getElementById('mealOptions');
   mealOptionsContainer.innerHTML = '';
 
@@ -9,11 +15,11 @@ function updateMealOptions() {
     mealOptionDiv.innerHTML = `
       <label>Select a meal for ${guest}</label>
       <div class="input-holder">
-        <label for="steak-${guest}">Grilled NY Strip Steak w/ Whiskey Demi-Glaze</label>
+        <label for="steak-${guest}">6oz Grilled Filet Mignon with Roasted Cippolini Demiglace</label>
         <input type="radio" name="meal_${guest}" id="steak-${guest}" value="steak" checked>
       </div>
       <div class="input-holder">
-        <label for="salmon-${guest}">Oven Roasted Atlantic Salmon w/ Tomato Vinaigrette</label>
+        <label for="salmon-${guest}">Roasted Halibut with Tomato Brandy Cream Sauce</label>
         <input type="radio" name="meal_${guest}" id="salmon-${guest}" value="salmon">
       </div>
     `;
@@ -32,56 +38,90 @@ guestCheckboxes.forEach(checkbox => {
 updateMealOptions();
 
 
-// Function to handle form submission
+function printData(){
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var policy = document.getElementById('policy').value;
+
+  //  var guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.value);
+  var guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.getAttribute('value'));
+  
+  // Create an object to store all form data, including guests and meals
+  var formData = {
+    name: name,
+    email: email,
+    policy: policy,
+    guests: guests.map(guest => {
+      return {
+        guestName: guest,
+        mealChoice: document.querySelector(`input[name="meal_${guest}"]:checked`).value
+      };
+    })
+  };
+  
+  console.log(formData);
+  var formDataJSON = JSON.stringify(formData);
+  console.log(formDataJSON);
+  document.querySelector('.anchor-thanks').scrollIntoView();
+}
+
 function submitForm(event) {
   event.preventDefault();
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
+  var policy = document.getElementById('policy').value;
 
-//  var guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.value);
+  //  var guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.value);
   var guests = Array.from(document.querySelectorAll('input[name="guests[]"]:checked')).map(input => input.getAttribute('value'));
+  
+  // Create an object to store all form data, including guests and meals
+  var formData = {
+    name: name,
+    email: email,
+    policy: policy,
+    guests: guests.map(guest => {
+      return {
+        guestName: guest,
+        mealChoice: document.querySelector(`input[name="meal_${guest}"]:checked`).value
+      };
+    })
+  };
 
-  // Prepare data for submission
-  var formData = new FormData();
-  formData.append("name", name);
-  formData.append("email", email);
-
-  guests.forEach((guest, index) => {
-    formData.append(`guest${index + 1}`, guest);
-    formData.append(`meal${index + 1}`, document.querySelector(`input[name="meal_${guest}"]:checked`).value);
-
-  });
+  // Serialize the formData object to JSON
+  var formDataJSON = JSON.stringify(formData);
 
   // Submit data to Google Sheets
-var url = "https://script.google.com/macros/s/AKfycbz3inM8CDHUJJq4qr5HLbbM_c6DpHEgpcEZYa9NvPSPV3vFjYUKcAGhmrG0UAd1F-mG/exec";
-fetch(url, { method: "POST", body: formData })
-  .then(function (response) {
-    if (response.ok) {
-      // Redirect to confirmation page
-      redirectToConfirmationPage(name, email, guests); // Pass the guests array as a parameter
-    } else {
-      throw new Error("Error submitting form.");
-    }
-  })
-  .catch(function (error) {
-    console.error(error);
-    alert("Error submitting form. Please try again later.");
-  });
+  var url = "https://script.google.com/macros/s/AKfycbztq9FFu5olYDLJfl6Ce6i3-dVBGocoy4p05-EXXWlTnQHi3uBItoHNppS74MAZYQLK/exec";
+  console.log("I'm submitting!")
+  fetch(url, {  method: "POST", 
+                headers: {
+                  'Content-Type': 'application/json'
+                  },
+                body: formDataJSON })
+    .then(function (response) {
+      if (response.ok) {
+        // redirectToConfirmationPage(formData); 
+        console.log("Yay it worked!");
+      } else {
+        throw new Error("Error submitting form.");
+      }
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert("Error submitting form. Please try again later.");
+    });
 }
 
-
-
-
-// Function to redirect to confirmation page
-function redirectToConfirmationPage(name, email, guests) {
-  var confirmationUrl = 'confirmation.html'; // Replace with the actual URL of the confirmation page
-  // Append query parameters to the URL if needed
-  confirmationUrl += `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
-  guests.forEach((guest, index) => {
-    confirmationUrl += `&guest${index + 1}=${encodeURIComponent(guest)}`;
-  });
-  window.location.href = confirmationUrl;
-}
+// // Function to redirect to confirmation page
+// function redirectToConfirmationPage(name, email, guests) {
+//   var confirmationUrl = 'confirmation.html'; // Replace with the actual URL of the confirmation page
+//   // Append query parameters to the URL if needed
+//   confirmationUrl += `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
+//   guests.forEach((guest, index) => {
+//     confirmationUrl += `&guest${index + 1}=${encodeURIComponent(guest)}`;
+//   });
+//   window.location.href = confirmationUrl;
+// }
 
 
 // Add event listener to form submission

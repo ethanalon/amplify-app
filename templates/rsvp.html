@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP</title>
+    <title>Ethan & Sang's Wedding</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 
 <body>
-    <script src="../static/script.js"></script>
+    <script src="/static/script.js"></script>
     <section class="rsvp-wrapper">
     <form id="questionForm" class="questionForm"
       method="POST"
       action="https://script.google.com/macros/s/AKfycbyWEg6qbhOV-udp4rNmZ7ZVu6LHDd6ZlU_9y3sIHpWFH6SqypNlLrDI7uDK6a1yguIx/exec">
 
         <div class="anchor-title question">
-            <h1 class="big-title">RSVP</h1>
+            <h1 class="big-title">Ethan & Sang's Wedding</h1>
             <div class="button-holder">
-                <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-name').scrollIntoView();">Start Here</div>
+                <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-name').scrollIntoView();">Start RSVP</div>
             </div>
         </div>
 
         <div class="anchor-name question">
+            <p>*If you're responding for you and your family (or a guest), you'll
+                be able to RSVP for your entire group.
+            </p>
             <div class="input-holder">
-                <label for="name">Name:</label>
+                
+                <label for="name">Full Name:</label>
                 <input type="text" name="name" id="name" required>
             </div>
             <div class="button-holder">
@@ -38,8 +42,14 @@
   <div class="guest-option">
     {% for guest in guests %}
     <div class="input-holder">
-      <input type="checkbox" id="guest-{{ guest }}" name="guests[]" value="{{ guest }}" onchange="updateMealOptions()">
-      <label for="guest-{{ guest }}">{{ guest }}</label>
+        <label for="guest-{{ guest }}">{{ guest }}</label>
+        <label class="switch switch-yes-no">
+            <input type="checkbox" class="switch-input" id="guest-{{ guest }}" name="guests[]" value="{{ guest }}" onchange="updateMealOptions()">
+            <span class="switch-label" data-on="Yes" data-off="No"></span> 
+            <span class="switch-handle"></span> 
+        </label>
+      
+     
     </div>
     {% endfor %}
   </div>
@@ -89,7 +99,14 @@
 
         <div class="anchor-diet question">
             <h2>Meal Selection</h2>
-            <p>All meals are served with Chef's Choice of Starch, Seasonal Vegetables, Rolls, and Butter</p>
+
+            <h3>All meals come with:</h3>
+            <ul>
+                <li>Little Gem Caesar Salad with House Croutons, Caesar Dressing, and Shredded Parmesan</li>
+                <li>Herb Roasted Fingerling Potatoes</li>
+                <li>Chef's Roasted Seasonal Vegetables</li>
+            </ul>
+
             <div class="diet-options" id="mealOptions">
               <!-- Meal options will be dynamically populated here -->
             </div>
@@ -120,7 +137,7 @@
             </div>
             <div class="button-holder">
                 <div class="backButton" id="backButton" onclick="document.querySelector('.anchor-phone').scrollIntoView();">Back</div>
-                <div class="nextButton" id="nextButton" onclick="document.querySelector('.anchor-thanks').scrollIntoView();">Next</div>
+                <div class="nextButton" id="nextButton" onclick="printData();">Next</div>
             </div>
         </div>
 
@@ -137,3 +154,4 @@
     <a href="/">Back to Home Page</a>
 </body>
 </html>
+    

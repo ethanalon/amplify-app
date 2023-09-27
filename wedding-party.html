@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,146 +8,228 @@
     <title>Meet the Wedding Party</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
+    <div class="header-banner">
+        <img src="head-bg.webp" alt="bg">
+    </div>
 
-    <section class="header-banner">
-        <h1>Meet the Wedding Party</h1>
-    </section>
+    <div class="top">
+        <h2>Ethan & Sang</h2>
+        <!-- <h2 style="font-family: 'Ysabeau Infant', serif; font-size:2em;">Tentatively Postponed to 2025</h2> -->
+        <!-- <h1>Ethan & Sang</h1> -->
+        <h4>June 1, 2025 - El Cerrito, CA</h4>
+    </div>
+
+    <!-- Countdown Clock -->
+    <!-- <script>
+        var end = new Date('06/01/2024 10:1 AM');
+        
+            var _second = 1000;
+            var _minute = _second * 60;
+            var _hour = _minute * 60;
+            var _day = _hour * 24;
+            var timer;  
+        
+            function showRemaining() {
+                var now = new Date();
+                var distance = end - now;
+                if (distance < 0) {
+        
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = 'EXPIRED!';
+        
+                    return;
+                }
+                var days = Math.floor(distance / _day);
+                // var hours = Math.floor((distance % _day) / _hour);
+                // var minutes = Math.floor((distance % _hour) / _minute);
+                // var seconds = Math.floor((distance % _minute) / _second);
+        
+                if (days>1){
+                    document.getElementById('countdown').innerHTML = days + ' days left!';
+                }
+                else{
+                    document.getElementById('countdown').innerHTML = days + ' day left!';
+                }
+                // document.getElementById('countdown').innerHTML += hours + 'hrs ';
+                // document.getElementById('countdown').innerHTML += minutes + 'mins ';
+                // document.getElementById('countdown').innerHTML += seconds + 'secs';
+            }
+        
+            timer = setInterval(showRemaining, 1000);
+    </script>
+
+    <div id="countdown"></div> -->
     
+    <!-- NAV BAR -->
+    <nav>
+        <div class="container">
+          
+          <ul class="menu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">Our Story</a></li>
+            <li><a href="/schedule.html">Schedule</a></li>
+            <li><a href="/photos.html">Photos</a></li>
+            <li><a href="/wedding-party.html">Wedding Party</a></li>
+            <li><a href="/registry.html">Registry</a></li>
+            <li><a href="/templates/invite.html">RSVP</a></li>
+          </ul>
+          <div class="toggle"></div>
+        </div>
+    </nav>
 
-    <section class="bridesmaids-section">
-        <h2>Bridesmaids</h2>
-        <div class="bridesmaid">
-            <div>
-                <img class="bridesmaid-img" src="wedding_party/loan.jpg" alt="">
+    <section class="wedding-party">
+        <section class="header-banner">
+            <h1>Meet the Wedding Party</h1>
+        </section>
+
+
+        <section class="bridesmaids-section">
+            <h2>Bridesmaids</h2>
+            <div class="bridesmaid">
+                <div>
+                    <img class="bridesmaid-img" src="wedding_party/loan.jpg" alt="">
+                </div>
+                <div class="bridesmaid-bio">
+                    <h3>Loan Chung, Maid of Honor</h3>
+                    <p>Sang's sister
+                    </p>
+                </div>
             </div>
-            <div class="bridesmaid-bio">
-                <h3>Loan Chung, Maid of Honor</h3>
-                <p>Sang's sister
-                </p>
+            <div class="bridesmaid">
+                <div class="bridesmaid-bio">
+                    <h3>Carmen Espinosa</h3>
+                    <p>Sang's best friend
+                    </p>
+                </div>
+                <div>
+                    <img class="bridesmaid-img" src="wedding_party/carmen.jpg" alt="">
+                </div>
             </div>
-        </div>
-        <div class="bridesmaid">
-            <div class="bridesmaid-bio">
-                <h3>Carmen Espinosa</h3>
-                <p>Sang's best friend
-                </p>
+            <div class="bridesmaid">
+                <div>
+                    <img class="bridesmaid-img" src="wedding_party/mimi.jpg" alt="">
+                </div>
+                <div class="bridesmaid-bio">
+                    <h3>Mimi Tang</h3>
+                    <p>Sang's cousin.
+                    </p>
+                </div>
             </div>
-            <div>
-                <img class="bridesmaid-img" src="wedding_party/carmen.jpg" alt="">
+            <div class="bridesmaid">
+                <div class="bridesmaid-bio">
+                    <h3>Anna Chang</h3>
+                    <p>Sang's cousin.
+                    </p>
+                </div>
+                <div>
+                    <img class="bridesmaid-img" src="wedding_party/anna.jpg" alt="">
+                </div>
             </div>
-        </div>
-        <div class="bridesmaid">
-            <div>
-                <img class="bridesmaid-img" src="wedding_party/mimi.jpg" alt="">
+            <div class="bridesmaid">
+                <div>
+                    <img class="bridesmaid-img" src="wedding_party/lily.jpg" alt="">
+                </div>
+                <div class="bridesmaid-bio">
+                    <h3>Lily Wilson</h3>
+                    <p>Ethan's cousin.
+                    </p>
+                </div>
             </div>
-            <div class="bridesmaid-bio">
-                <h3>Mimi Tang</h3>
-                <p>Sang's cousin. 
-                </p>
+        </section>
+
+        <section class="groomsmen-section">
+            <h2>Groomsmen</h2>
+            <div class="groomsmen">
+                <div>
+                    <img class="groomsmen-img" src="wedding_party/ben.jpg" alt="">
+                </div>
+                <div class="groomsmen-bio">
+                    <h3>Benedict Tannady, the Best Man</h3>
+                    <p>Ethan's best friend
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="bridesmaid">
-            <div class="bridesmaid-bio">
-                <h3>Anna Chang</h3>
-                <p>Sang's cousin. 
-                </p>
+            <div class="groomsmen">
+                <div class="groomsmen-bio">
+                    <h3>Cong Tran</h3>
+                    <p>Sang and Ethan's friend
+                    </p>
+                </div>
+                <div>
+                    <img class="groomsmen-img" src="wedding_party/cong.jpg" alt="">
+                </div>
             </div>
-            <div>
-                <img class="bridesmaid-img" src="wedding_party/anna.jpg" alt="">
+            <div class="groomsmen">
+                <div>
+                    <img class="groomsmen-img" src="wedding_party/david.jpg" alt="">
+                </div>
+                <div class="groomsmen-bio">
+                    <h3>David Hong</h3>
+                    <p>Sang and Ethan's friend
+                    </p>
+                </div>
             </div>
-        </div>
+            <div class="groomsmen">
+                <div class="groomsmen-bio">
+                    <h3>Jimmy Tang</h3>
+                    <p>Sang's cousin
+                    </p>
+                </div>
+                <div>
+                    <img class="groomsmen-img" src="wedding_party/jimmy.jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="kids-section">
+            <h2>Bearers and Flower Girls</h2>
+            <div class="kids">
+                <div>
+                    <img class="kids-img" src="wedding_party/grayson.jpg" alt="">
+                </div>
+                <div class="kids-bio">
+                    <h3>Grayson, Ring Bearer</h3>
+                    <p>Ethan's Cousin
+                    </p>
+                </div>
+            </div>
+            <div class="kids">
+                <div class="kids-bio">
+                    <h3>Gabe, Coin Bearer</h3>
+                    <p>Ethan's cousin
+                    </p>
+                </div>
+                <div>
+                    <img class="kids-img" src="wedding_party/nissa.jpg" alt="">
+                </div>
+            </div>
+            <div class="kids">
+                <div>
+                    <img class="kids-img" src="wedding_party/charlotte.jpg" alt="">
+                </div>
+                <div class="kids-bio">
+                    <h3>Charlotte, Flower Girl</h3>
+                    <p>Ethan's Cousin
+                    </p>
+                </div>
+            </div>
+            <div class="kids">
+                <div class="kids-bio">
+                    <h3>Kiki, Flower Girl</h3>
+                    <p>Ethan's Cousin
+                    </p>
+                </div>
+                <div>
+                    <img class="kids-img" src="wedding_party/nissa.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <a href="#">Back to Top</a>
+
     </section>
 
-    <section class="groomsmen-section">
-        <h2>Groomsmen</h2>
-        <div class="groomsmen">
-            <div>
-                <img class="groomsmen-img" src="wedding_party/ben.jpg" alt="">
-            </div>
-            <div class="groomsmen-bio">
-                <h3>Benedict Tannady, the Best Man</h3>
-                <p>Ethan's best friend 
-                </p>
-            </div>
-        </div>
-        <div class="groomsmen">
-            <div class="groomsmen-bio">
-                <h3>Cong Tran</h3>
-                <p>Sang and Ethan's friend
-                </p>
-            </div>
-            <div>
-                <img class="groomsmen-img" src="wedding_party/cong.jpg" alt="">
-            </div>
-        </div>
-        <div class="groomsmen">
-            <div>
-                <img class="groomsmen-img" src="wedding_party/david.jpg" alt="">
-            </div>
-            <div class="groomsmen-bio">
-                <h3>David Hong</h3>
-                <p>Sang and Ethan's friend
-                </p>
-            </div>
-        </div>
-        <div class="groomsmen">
-            <div class="groomsmen-bio">
-                <h3>Carlos Arevalo</h3>
-                <p>Ethan's friend
-                </p>
-            </div>
-            <div>
-                <img class="groomsmen-img" src="wedding_party/fucking_carlos.jpg" alt="">
-            </div>
-        </div>
-    </section>
-
-    <section class="kids-section">
-        <h2>Bearers and Flower Girls</h2>
-        <div class="kids">
-            <div>
-                <img class="kids-img" src="wedding_party/grayson.jpg" alt="">
-            </div>
-            <div class="kids-bio">
-                <h3>Grayson, Ring Bearer</h3>
-                <p>Ethan's Cousin
-                </p>
-            </div>
-        </div>
-        <div class="kids">
-            <div class="kids-bio">
-                <h3>DeMarco, Coin Bearer</h3>
-                <p>Ethan's cousin
-                </p>
-            </div>
-            <div>
-                <img class="kids-img" src="wedding_party/nissa.jpg" alt="">
-            </div>
-        </div>
-        <div class="kids">
-            <div>
-                <img class="kids-img" src="wedding_party/charlotte.jpg" alt="">
-            </div>
-            <div class="kids-bio">
-                <h3>Charlotte, Flower Girl</h3>
-                <p>Ethan's Cousin
-                </p>
-            </div>
-        </div>
-        <div class="kids">
-            <div class="kids-bio">
-                <h3>Kiki, Flower Girl</h3>
-                <p>Ethan's Cousin
-                </p>
-            </div>
-            <div>
-                <img class="kids-img" src="wedding_party/nissa.jpg" alt="">
-            </div>
-        </div>
-    </section>
-
-
-    <a href="/">Back to Home Page</a>
 </body>
+
 </html>

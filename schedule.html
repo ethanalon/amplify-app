@@ -5,12 +5,194 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <div class="header-banner">
+        <img src="head-bg.webp" alt="bg">
+    </div>
+
+    <div class="top">
+        <h2>Ethan & Sang</h2>
+        <!-- <h2 style="font-family: 'Ysabeau Infant', serif; font-size:2em;">Tentatively Postponed to 2025</h2> -->
+        <!-- <h1>Ethan & Sang</h1> -->
+        <h4>June 1, 2025 - El Cerrito, CA</h4>
+    </div>
+
+    <!-- Countdown Clock -->
+    <!-- <script>
+        var end = new Date('06/01/2024 10:1 AM');
+        
+            var _second = 1000;
+            var _minute = _second * 60;
+            var _hour = _minute * 60;
+            var _day = _hour * 24;
+            var timer;  
+        
+            function showRemaining() {
+                var now = new Date();
+                var distance = end - now;
+                if (distance < 0) {
+        
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = 'EXPIRED!';
+        
+                    return;
+                }
+                var days = Math.floor(distance / _day);
+                // var hours = Math.floor((distance % _day) / _hour);
+                // var minutes = Math.floor((distance % _hour) / _minute);
+                // var seconds = Math.floor((distance % _minute) / _second);
+        
+                if (days>1){
+                    document.getElementById('countdown').innerHTML = days + ' days left!';
+                }
+                else{
+                    document.getElementById('countdown').innerHTML = days + ' day left!';
+                }
+                // document.getElementById('countdown').innerHTML += hours + 'hrs ';
+                // document.getElementById('countdown').innerHTML += minutes + 'mins ';
+                // document.getElementById('countdown').innerHTML += seconds + 'secs';
+            }
+        
+            timer = setInterval(showRemaining, 1000);
+    </script>
+
+    <div id="countdown"></div> -->
+    
+    <!-- NAV BAR -->
+    <nav>
+        <div class="container">
+          
+          <ul class="menu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">Our Story</a></li>
+            <li><a href="/schedule.html">Schedule</a></li>
+            <li><a href="/photos.html">Photos</a></li>
+            <li><a href="/wedding-party.html">Wedding Party</a></li>
+            <li><a href="/registry.html">Registry</a></li>
+            <li><a href="/templates/invite.html">RSVP</a></li>
+          </ul>
+          <div class="toggle"></div>
+        </div>
+    </nav>
     
     <div class="schedule-container">
 
-        <h3 class="schedule-day">CEREMONY</h3>
+        <div class="schedule-title">
+            <h3>THE WEDDING OF</h3>
+            <p>Ethan and Sang</p>
+            <h1>Order of Events</h1>
+        </div>
+        
+        <div class="schedule-cards">
+
+            <div class="schedule-card ceremony">
+                <div class="schedule-card-text">
+                    <p>Ceremony</p>
+                    <p>3:00 PM</p>
+                </div>
+                <div class="schedule-card-img">
+                    <img src="schedule-icons/ceremony.png" alt="ceremony.png">
+                </div>
+            </div>
+
+            <div class="schedule-card cocktail">
+                <div class="schedule-card-text">
+                    <p>Cocktail Hour</p>
+                    <p>3:30 PM</p>
+                </div>
+                <div class="schedule-card-img">
+                    <img src="schedule-icons/cocktail.png" alt="cocktail.png">
+                </div>
+            </div>
+
+            <div class="schedule-card toast">
+                <div class="schedule-card-text">
+                    <p>Speeches & Toasts</p>
+                    <p>4:15 PM</p>
+                </div>
+                <div class="schedule-card-img">
+                    <img src="schedule-icons/toast.png" alt="toast.png">
+                </div>
+            </div>
+
+            <div class="schedule-card dinner">
+                <div class="schedule-card-text">
+                    <p>Dinner</p>
+                    <p>4:30 PM</p>
+                </div>
+                <div class="schedule-card-img">
+                    <img src="schedule-icons/dinner.png" alt="dinner.png">
+                </div>
+            </div>
+
+            <div class="schedule-card cake">
+                <div class="schedule-card-text">
+                    <p>Cake</p>
+                    <p>5:00 PM</p>
+                </div>
+                <div class="schedule-card-img">
+                    <img src="schedule-icons/cake.png" alt="cake.png">
+                </div>
+            </div>
+
+            <div class="schedule-card party">
+                <div class="schedule-card-text">
+                    <p>Party</p>
+                    <p>5:30 PM</p>
+                </div>
+                <div class="schedule-card-img">
+                    <img src="schedule-icons/party.png" alt="party.png">
+                </div>
+            </div>
+
+        </div>
+<!-- 
+        <div class="schedule-card">
+            <h1>We Do</h1>
+            <ul>
+                <li>Ceremony | 3:00 - 3:30PM</li>
+
+                <li>Guests arrive 3:00 - 3:15PM</li>
+
+                <li>Wedding Ceremony 3:15 - 3:30PM</li>
+                <li>Processional</li>
+                <li>Reading</li>
+                <li>Vows</li>
+                <li>Rings</li>
+                <li>Pronouncement</li>
+                <li>Recessional</li>
+            </ul>
+        </div>
+        <div class="schedule-card">
+            <h1>We Toast</h1>
+            <ul>
+                <li>Cocktail Hour | 3:30 - 4:15PM</li>
+                <li>Bride and Groom Photos 3:45PM</li>
+            </ul>
+        </div>
+        <div class="schedule-card">
+            <h1>We Eat</h1>
+            <ul>
+                <li>Dinner | 4:15 - 5:15PM</li>
+                <li>Open buffet</li>
+                <li>Toasts and Speeches 4:30PM</li>
+            </ul>
+        </div>
+        <div class="schedule-card">
+            <h1>We Party</h1>
+            <ul>
+                <li>Dancing + Traditional Stuff | 5:15 - 6:15PM</li>
+                <li>Cake Cutting 6:00PM</li>
+                <li>Dance floor and open bar 5:30 - 6:30PM</li>
+            </ul>
+        </div> -->
+        
+
+
+        <!-- <h3 class="schedule-day">CEREMONY</h3>
 
         <div class="schedule-cards">
             <ul>
@@ -23,7 +205,7 @@
                     <h4>Ceremony</h4>
                 </li>
                 <li class="schedule-card">
-                    <strong class="schedule-time">3:00 PM - 4:00 PM</strong>
+                    <strong class="schedule-time">3:00 PM - 3:30 PM</strong>
                     <h4>Cocktail Hour</h4>
                     <p>Snacks and Drinks</p>
                 </li>
@@ -37,7 +219,7 @@
         <div class="schedule-cards">
             <ul>
                 <li class="schedule-card">
-                    <strong class="schedule-time">5:00 PM - 7:00 PM</strong>
+                    <strong class="schedule-time">3:30 PM - 6:00 PM</strong>
                     <h4>Reception + Dinner</h4>
                 </li>
                 <li class="schedule-card">
@@ -49,20 +231,16 @@
                     <h4>Dancing + Speeches</h4>
                 </li>
                 <li class="schedule-card">
-                    <strong class="schedule-time">10:00 PM - 11:30 PM</strong>
-                    <h4>Late-Night Snacks</h4>
-                    <p>Late night snacks and a mini buffet</p>
-                </li>
-                <li class="schedule-card">
-                    <strong class="schedule-time">11:30 PM</strong>
+                    <strong class="schedule-time">6:00 PM</strong>
                     <h4>Farewell</h4>
                 </li>
             </ul>
-        </div>
+        </div> -->
+        <a href="#">Back to Top</a>
+
     </div>
 
 
-    <a href="/">Back to Home Page</a>
 
 </body>
 </html>
