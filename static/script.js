@@ -91,7 +91,7 @@ function submitForm(event) {
   var formDataJSON = JSON.stringify(formData);
 
   // Submit data to Google Sheets
-  var url = "https://script.google.com/macros/s/AKfycbznZeWoFbtrTZ4-xmYfvD50HIHhq9DrfwSLZnHydFtlXIo3o4c3guHpwPzyBlzcA4u0/exec";
+  var url = "https://script.google.com/macros/s/AKfycbztq9FFu5olYDLJfl6Ce6i3-dVBGocoy4p05-EXXWlTnQHi3uBItoHNppS74MAZYQLK/exec";
   console.log("I'm submitting!")
   fetch(url, {  method: "POST", 
                 headers: {

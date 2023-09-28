@@ -1,3 +1,4 @@
+// invite.js
 document.getElementById('rsvpForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -6,6 +7,6 @@ document.getElementById('rsvpForm').addEventListener('submit', function(event) {
 
   console.log(family_name, invite_code);
 
-  var redirectUrl = `/rsvp/${family_name}/${invite_code}`;
+  var redirectUrl = `/rsvp/${encodeURIComponent(family_name)}/${invite_code}`;
   window.location.href = redirectUrl;
 });

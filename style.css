@@ -431,10 +431,10 @@ button h3:hover {
 
 
 /* ******************************* */
-/* Schedule page */
+/* Schedule page (and Food page) */
 
 @media (max-width: 600px) {
-  .schedule-cards {
+  .schedule-cards, .food-cards{
     display: flex;
     flex-direction: column;
     /* Ensure column layout for smaller screens */
@@ -446,7 +446,7 @@ button h3:hover {
 }
 
 @media (max-width: 600px) {
-  .schedule-card {
+  .schedule-card, .food-card{
     width: 70px;
     /* This might be causing issues; try reducing this width */
     padding: 10px;
@@ -454,22 +454,39 @@ button h3:hover {
   }
 }
 
-.schedule-container {
+.schedule-container, .food-container {
   display: flex;
   flex-direction: column;
   background-color: white;
   align-items: center;
 }
 
-.schedule-title {
+.schedule-title, .food-title {
   padding-top: 20vh;
   flex-direction: column;
+}
+
+.food-cards{
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .schedule-cards {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.food-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 3vh;
+  padding: 3vh;
+  border-radius: 8px;
+  width: 250px;
+  height: 100px;
 }
 
 .schedule-card {
@@ -508,18 +525,18 @@ button h3:hover {
   background-color: var(--beige-color);
 }
 
-.schedule-card-text {
+.schedule-card-text, .food-card-text {
   flex-direction: column;
   font-size: 24px;
   padding-right: 12px;
   padding-left: 12px;
 }
 
-.schedule-card-img img {
+.schedule-card-img img, .food-card-img img{
   width: 75px;
 }
 
-.schedule-card ul li {
+.schedule-card ul li, .food-card ul li {
   list-style-type: none;
   list-style: none;
   text-decoration: none;
