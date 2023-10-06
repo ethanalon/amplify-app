@@ -699,3 +699,10 @@ input {
 .registry-shops img {
   width: 200px;
 }
+
+/* temp page */
+.temp-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
