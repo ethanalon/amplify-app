@@ -23,28 +23,31 @@
 
 }
 
-.header-banner{
-  width: 100vw;
-  /* height: 10vh; */
+
+.header-banner {
+  min-height: 5vh;
+  margin-top: 5vh;
+  font-size: 1.5em;
+  width: 100%;
   z-index: -1;
-  /* justify-content: space-between; */
   position: relative;
 }
 
 .header-banner img{
-  width:100vw;
+  width:100%;
   object-fit: contain;
   /* object-position: 0 100%; */
 }
 
 footer{
+  width: 100%;
   padding-top: 50px;
   justify-content: center;
   text-align: center;
 }
 
 .footer-banner{
-  width: 100vw;
+  width: 100%;
   height: 20vh;
   display: flex;
   justify-content: space-between;
@@ -54,7 +57,7 @@ footer{
 }
 
 .footer-banner img{
-  width: 100vw;
+  width: 100%;
   object-fit: cover;
   object-position: 0 100%;
 
@@ -73,8 +76,8 @@ footer{
   font-family: 'Allura'; 
   font-size:5em; 
   font-weight:400;
-
 }
+
 
 .top h4{
   font-family: 'Lato';
@@ -128,6 +131,16 @@ nav {
   text-decoration-color: var(--blue-color);
 }
 
+@media (max-width: 600px) {
+  .top h2{
+    font-size: 3em;
+  }
+
+  /* .menu{
+    display: none;
+  } */
+  /* ADD A HAMBURGER */
+} 
 
 section {
 
@@ -174,6 +187,7 @@ section {
 .story-wrapper {
   width: 100vw;
   margin-top: 60px;
+  line-height: 40px;
 }
 
 .story {
@@ -304,7 +318,10 @@ button h3:hover {
 /* SOCIALS / FOOTER */
 
 .socials {
-  flex-direction: row;
+  /* flex-direction: row; */
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr)); */
+  grid-template-columns: repeat(auto-fit, 100px);
   justify-content: center;
   z-index: 0;
   padding-bottom: 400px;
@@ -325,34 +342,46 @@ button h3:hover {
 /* ######## */
 /* WEDDING PARTY PAGE */
 
+.party-header-banner{
+  font-size: 1.5em;
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+}
+
 .wedding-party{
-  margin-top: 60px;
   width:100%;
   justify-content: space-around;
   display: flex;
   flex-direction: column;
-
 }
 
-.header-banner {
-  min-height: 5vh;
-  margin-top: 5vh;
-  font-size: 1.5em;
-}
 
 .bridesmaids-section {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  margin-top: 0vh;
 }
 
-.bridesmaid {
+.bridesmaid, .groomsmen{
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  flex-direction: column;
   padding-left: 10em;
   padding-right: 10em;
-  padding-bottom: 5em;
-  padding-top: 2em;
+  /* padding-bottom: 5em;
+  padding-top: 2em; */
+  width: 50%;
+}
+
+.kids{
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: column;
+  padding-left: 10em;
+  padding-right: 10em;
+  /* padding-bottom: 5em;
+  padding-top: 2em; */
   width: 50%;
 }
 
@@ -364,27 +393,27 @@ button h3:hover {
   padding: 10px;
 }
 
-.bridesmaid-bio {
+.bridesmaid-bio, .groomsmen-bio{
   display: flex;
   flex-direction: column;
   padding: 3em;
+  padding-top: 0px;
+}
+
+.kids-bio {
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  padding-top: 16px;
 }
 
 .groomsmen-section {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
 }
 
-.groomsmen {
-  display: flex;
-  flex-direction: row;
-  padding-left: 10em;
-  padding-right: 10em;
-  padding-bottom: 5em;
-  padding-top: 2em;
-  width: 50%;
-}
+
 
 .groomsmen-img {
   width: 150px;
@@ -394,27 +423,12 @@ button h3:hover {
   padding: 10px;
 }
 
-.groomsmen-bio {
-  display: flex;
-  flex-direction: column;
-  padding: 3em;
-}
-
 .kids-section {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
 }
 
-.kids {
-  display: flex;
-  flex-direction: row;
-  padding-left: 10em;
-  padding-right: 10em;
-  padding-bottom: 5em;
-  padding-top: 2em;
-  width: 50%;
-}
 
 .kids-img {
   width: 150px;
@@ -422,11 +436,6 @@ button h3:hover {
   border-radius: 50%;
   object-fit: cover;
   padding: 10px;
-}
-
-.kids-bio {
-  display: flex;
-  flex-direction: column;
 }
 
 
