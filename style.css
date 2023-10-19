@@ -401,7 +401,7 @@ button h3:hover {
 .bridesmaid-bio, .groomsmen-bio{
   display: flex;
   flex-direction: column;
-  padding: 3em;
+  padding: 1em;
   padding-top: 0px;
 }
 
